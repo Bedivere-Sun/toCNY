@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+	<head>
+		<title>人民币大写转换器 - 输入数字，点按钮，转换成中文大写格式</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <!--偷懒，不单写文件了，有问题直接调……结果居然没问题……=_,=|||……-->
+		<style>
+			body{
+				width: 80%;
+				margin: auto;
+				margin-top: 25px;
+			}
+			#WrittingForm h2{
+				color: #f00;
+			}
+			#WrittingForm, .container, footer{
+				text-align: center;
+			}
+			caption{
+				font-weight: bold;
+			}
+			table{
+				width: 100%;
+			}
+			td{
+				text-align: center;
+				width: 25%;
+			}
+			tr:hover{
+				background-color: blue;
+				color:white;
+			}
+			header p{
+				background-color: #fc0;
+			}
+		</style>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>人民币大写转换器</h1>
+			<p>输入数字→点击“转换”→显示结果——就这么简单</p>
+		</header>
+		<nav>
+			<p>额外功能</p>
+			<ul>
+				<li>
+					<a href="javascript:;" onclick="Clear_History()">清空历史信息</a>
+				</li>
+			</ul>
+		</nav>
+		<hr />
+		
+		<div class="container">
+		<div id="WrittingForm">
+		</div>
+		<input type="text" id="number" placeholder="请输入数字" value="" />
+		<input type="button" value="转换！" onclick="trans(number.value)"/>
+		<p id="tips" style="color:red;"></p>
+		</div>
+		
+		
+		<hr />
+		<div class="History">
+			<table border="1">
+				<caption>大写转换历史记录</caption>
+				<thead>
+					<tr>
+						<!--<td>记录数</td>--><td>原输入数据</td><td>转换后的大写形式</td>
+					</tr>
+				</thead>
+				<tbody id="records">
+				</tbody>
+			</table>
+		</div>
+		
+		
+		<hr />
+		<footer>
+			<p>Copyright &copy; 2018 By <a href="http://www.koori.org/">Koori</a></p>
+		</footer>
+	</body>
+</html>
